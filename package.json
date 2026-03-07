@@ -1,0 +1,37 @@
+{
+  "name": "error-translator",
+  "version": "1.0.0",
+  "description": "Translate cryptic error messages into plain English with the actual fix.",
+  "main": "index.js",
+  "bin": {
+    "error-translator": "./index.js"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "error",
+    "debugging",
+    "cli",
+    "errors",
+    "node",
+    "npm",
+    "git",
+    "docker",
+    "translator"
+  ],
+  "author": "NickCirv",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NickCirv/error-translator"
+  },
+  "homepage": "https://github.com/NickCirv/error-translator",
+  "bugs": {
+    "url": "https://github.com/NickCirv/error-translator/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
