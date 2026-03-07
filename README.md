@@ -1,5 +1,10 @@
 # error-translator
 
+[![npm version](https://img.shields.io/npm/v/error-translator.svg)](https://www.npmjs.com/package/error-translator)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D14-brightgreen.svg)](https://nodejs.org)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-blue.svg)](https://www.npmjs.com/package/error-translator)
+
 ```
  ____  ____  ____  __  ____     ____  ____   __   __ _  ____  __      __  ____  __  ____
 (  __)(  _ \(  _ \(  )(  _ \   (_  _)(  _ \ / _\ (  ( \/ ___)(  )    / _\(_  _)/  \(  _ \
@@ -132,3 +137,7 @@ Missing an error? Open an issue or PR — the database is just a plain array at 
 Built by [NickCirv](https://github.com/NickCirv) — check out the other tools.
 
 MIT License
+
+---
+
+If this made you mass-exhale through your nose, mass-hit that star button.
