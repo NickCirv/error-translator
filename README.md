@@ -1,3 +1,5 @@
+![Banner](banner.svg)
+
 # error-translator
 
 [![npm version](https://img.shields.io/npm/v/error-translator.svg)](https://www.npmjs.com/package/error-translator)
