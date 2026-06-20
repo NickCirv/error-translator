@@ -7,7 +7,7 @@
     "error-translator": "./index.js"
   },
   "scripts": {
-    "test": "node test.js",
+    "test": "node --test",
     "start": "node index.js"
   },
   "keywords": [
@@ -32,6 +32,6 @@
     "url": "https://github.com/NickCirv/error-translator/issues"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=20"
   }
 }
