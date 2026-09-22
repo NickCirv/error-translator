@@ -1,42 +1,66 @@
-<div align="center">
+![error-translator — Nicholas Ashkar repository collection](assets/nicholas-ashkar/banner.png)
 
 # error-translator
 
-**Stop googling cryptic error codes — get the plain English explanation and the actual fix.**
+Look up plain-language explanations for familiar development error messages.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?labelColor=0B0A09)](https://opensource.org/licenses/MIT)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-blue.svg?labelColor=0B0A09)](https://github.com/NickCirv/error-translator/blob/main/package.json)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D14-brightgreen.svg?labelColor=0B0A09)](https://nodejs.org)
 
-</div>
-
-## Install
-
-```bash
-npx github:NickCirv/error-translator "your error message"
-```
-
-## Usage
-
-```bash
-# Pass an error string directly
-npx github:NickCirv/error-translator "ENOENT: no such file or directory"
-
-# Pipe from a real command
-npm install 2>&1 | npx github:NickCirv/error-translator
-
-# Verbose output — shows matched patterns, tags, raw score
-npx github:NickCirv/error-translator "EADDRINUSE: address already in use :::3000" --verbose
-```
-
-| Flag | Description |
-|------|-------------|
-| `--verbose` / `-v` | Show matched patterns, tags, raw score, input snippet |
-| `--help` / `-h` | Show help |
+<a id="usage"></a>
 
 ## What it does
 
-Matches your error text against a database of 42 known patterns across Node.js, npm, Git, JavaScript, Python, Docker, TypeScript, and Webpack. For each match it prints a plain-English explanation, a concrete fix, and a confidence score. Works as a direct argument or via stdin pipe — useful for filtering the output of `docker build`, `npm install`, `python app.py`, and similar.
+Accepts an argument or piped error text, scores matches against a local pattern catalogue, and prints an explanation with suggested next steps. --verbose includes matching details and an input excerpt. See the pinned [implementation](https://github.com/NickCirv/error-translator/blob/d21a91ed85837268c65345000da91c71eb374363/index.js).
 
----
-<sub>Zero dependencies · Node ≥14 · MIT · by <a href="https://github.com/NickCirv">NickCirv</a></sub>
+
+<a id="install"></a>
+
+## Quickstart
+
+Node requirement from the inspected manifest: **`>=20`**. No model service is used by the inspected implementation. Remove secrets before sharing verbose output.
+
+The following example is **source-inspected, not executed**. It uses a pinned checkout; npm package publication is not assumed. Replace project paths or provide the stated input fixtures before running it.
+
+```bash
+git clone https://github.com/NickCirv/error-translator.git
+cd error-translator
+git checkout d21a91ed85837268c65345000da91c71eb374363
+npm install --ignore-scripts
+node index.js "ECONNREFUSED 127.0.0.1:3000"
+```
+
+Dependencies are installed with lifecycle scripts disabled in this recipe. Read the package scripts before enabling any lifecycle step required by your environment.
+
+## Usage and reference
+
+`error-translator` are the executable names declared by the package. [Command reference](docs/REFERENCE.md) covers source-backed options and entry points.
+
+| Control | Behavior in the inspected implementation |
+| --- | --- |
+| `TEXT` | Supply an error string or use stdin |
+| `--verbose` | Include match details and an input excerpt |
+| `--help` | Show invocation help |
+
+## Limits and operational notes
+
+Suggestions are static advice and can include destructive commands such as Docker pruning. Read them in context rather than executing them blindly. The match confidence is a heuristic score, not a validated probability.
+
+## Development
+
+No runtime checks were executed for this documentation review. The committed smoke test checks entrypoint JavaScript syntax; it does not exercise the command behavior.
+
+| Script | Declared command |
+| --- | --- |
+| `test` | `node --test` |
+| `start` | `node index.js` |
+
+Work from the pinned source, keep changes focused, and reproduce the affected behavior with a small fixture before proposing a change. Existing contribution and security policies remain authoritative where present.
+
+## Research and status
+
+[Research record](docs/RESEARCH.md) identifies the inspected revision, source evidence, documentation disposition and verification gaps. Static inspection supports the descriptions here; runtime behavior, dependency installation and current hosted services remain unverified.
+
+## License and author
+
+[License](https://github.com/NickCirv/error-translator/blob/d21a91ed85837268c65345000da91c71eb374363/LICENSE)
+
+[Nicholas Ashkar](https://nicholashkar.com) · Applied AI, systems and consulting.
